@@ -14,8 +14,10 @@ def set_alarm(alarm_state):
     try:
         if alarm_state:
             lgpio.gpio_write(h, ledPin, 1)  # HIGH
-            time.sleep(5)
-            lgpio.gpio_write(h, ledPin, 0)
+            #time.sleep(5)
+            #lgpio.gpio_write(h, ledPin, 0)
+        else:
+            lgpio.gpio_write(h, ledPin, 0)  # LOW
     except KeyboardInterrupt:
         print("Alarm interrupted.")
         lgpio.gpio_write(h, ledPin, 0)
